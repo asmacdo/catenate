@@ -1,0 +1,55 @@
+(datalad-dev) [d31548v@discovery7 yoh]$ ./basic_test.sh
++ nfs4_getfacl .
+
+# file: .
+A:fd:f0066m7@KIEWIT.DARTMOUTH.EDU:rwatcy
+A::OWNER@:rwadxtTnNcy
+A:fdi:OWNER@:rwadxtTnNcy
+A:fdg:rc-DBIC-admin@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
+A:fd:d11124v@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
+A:fd:f002d6b@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
+A:fd:f00275v@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
+A:fd:OWNER@:rwaDdxtTnNcCoy
+A:fd:GROUP@:rxtncy
+A:fd:d26427b@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
+A:fdg:rc-DartFSadmin@KIEWIT.DARTMOUTH.EDU:rwaDdxtTnNcCoy
++ git config annex.thawcontent-command
+/dartfs/rc/lab/D/DBIC/DBIC/archive/bin-annex/thaw-content %path
++ git config annex.freezecontent-command
+/dartfs/rc/lab/D/DBIC/DBIC/archive/bin-annex/freeze-content %path
++ which datalad
+/dartfs-hpc/rc/home/v/d31548v/.conda/envs/datalad-dev/bin/datalad
++ datalad --version
+datalad 0.19.6+2.gb8535c9ff
++ which git
+/dartfs/rc/lab/D/DBIC/DBIC/archive/git-annex/usr/lib/git-annex.linux/git
++ which git-annex
+/dartfs/rc/lab/D/DBIC/DBIC/archive/git-annex/usr/lib/git-annex.linux/git-annex
++ git annex version --raw
+10.20230126-1~ndall+1+ echo
+
++ git-annex version --raw
+10.20230126-1~ndall+1+ echo
+
++ datalad create -D teeeeest test-ds
+create(ok): /dartfs/rc/lab/D/DBIC/DBIC/CON/yoh/test-ds (dataset)
++ cd test-ds/
++ touch hello.world
++ datalad save
+add(ok): hello.world (file)
+save(ok): . (dataset)
+action summary:
+  add (ok: 1)
+  save (ok: 1)
++ datalad install -d . --source ///repronim/containers code/containers
+install(ok): code/containers (dataset)
+add(ok): code/containers (dataset)
+add(ok): .gitmodules (file)
+save(ok): . (dataset)
+add(ok): .gitmodules (file)
+save(ok): . (dataset)
+action summary:
+  add (ok: 3)
+  install (ok: 1)
+  save (ok: 2)
+
